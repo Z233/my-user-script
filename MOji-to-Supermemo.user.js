@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MOJi-to-Supermemo
 // @namespace    http://tampermonkey.net/
-// @version      0.1.2
+// @version      0.1.3
 // @description  https://getquicker.net/Sharedaction?code=f4d4f1b3-11b8-4d48-7e17-08da43e01676
 // @author       Fronz
 // @match        https://www.mojidict.com/*
@@ -29,7 +29,7 @@
 		const wordEl = document.querySelector('#spell')
 		const word = wordEl.textContent
 
-		const pronEl = document.querySelector('.right-panel div.word-container div.head div.pron')
+		const pronEl = document.querySelector('div.head div.pron')
 		const pron = pronEl.textContent
 
 		const detailListEls = document.querySelectorAll('.el-collapse[role=tablist]')
