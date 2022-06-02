@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         MOji-to-Supermemo
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  https://getquicker.net/Sharedaction?code=f4d4f1b3-11b8-4d48-7e17-08da43e01676
 // @author       Fronz
-// @match        https://www.mojidict.com/search*
+// @match        https://www.mojidict.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=mojidict.com
 // @require      https://gist.githubusercontent.com/adamhotep/7c9068f2196326ab79145ae308b68f9e/raw/waitForKeyElements.js
 // @grant        none
@@ -67,7 +67,7 @@
 			const data = [new ClipboardItem({ [type]: blob })]
 			navigator.clipboard.write(data).then(
 				function () {
-					window.open(`quicker:runaction:36692a80-89c5-406a-be40-47a15127098c`, '_self'
+					window.open(`quicker:runaction:从剪贴板创建问答卡`, '_self'
 					)
 				},
 				function (e) {
