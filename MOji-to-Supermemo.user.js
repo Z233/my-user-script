@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         MOJi-to-Supermemo
 // @namespace    http://tampermonkey.net/
-// @version      0.1.3
+// @version      0.1.4
+// @updateURL    https://github.com/Z233/userscript/raw/main/MOji-to-Supermemo.user.js
+// @downloadURL  https://github.com/Z233/userscript/raw/main/MOji-to-Supermemo.user.js
 // @description  https://getquicker.net/Sharedaction?code=f4d4f1b3-11b8-4d48-7e17-08da43e01676
 // @author       Fronz
 // @match        https://www.mojidict.com/*
@@ -27,10 +29,10 @@
 
 	function getWordCard() {
 		const wordEl = document.querySelector('#spell')
-		const word = wordEl.textContent
+		const word = wordEl.innerText.replace('\n', '')
 
 		const pronEl = document.querySelector('div.head div.pron')
-		const pron = pronEl.textContent
+		const pron = pronEl.innerText.replace('\n', '')
 
 		const detailListEls = document.querySelectorAll('.el-collapse[role=tablist]')
 		const detailList = [...detailListEls].reduce((acc, el) => {
@@ -38,15 +40,15 @@
 			acc = { ...acc, [detail]: [] }
 
 			const exampleEls = el.querySelectorAll('.example-info')
-			Array.from(exampleEls).forEach(exampleEl => acc[detail].push(exampleEl.textContent))
+			Array.from(exampleEls).forEach(exampleEl => acc[detail].push(exampleEl.firstChild.innerHTML))
 			return acc
 		}, {})
 
 		let detailStr = ``
 		for (const detail in detailList) {
-			detailStr += detail + '\n\n'
-			detailList[detail].forEach(example => detailStr += '- ' + example + '\n')
-			detailStr += '\n'
+			detailStr += `<p>${detail}</p>`
+			detailList[detail].forEach(example => detailStr += '- ' + example + '<br>')
+			detailStr += '<br>'
 		}
 
 		const front = word
