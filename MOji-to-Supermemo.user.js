@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MOJi-to-Supermemo
 // @namespace    http://tampermonkey.net/
-// @version      0.1.4
+// @version      0.1.5
 // @updateURL    https://github.com/Z233/userscript/raw/main/MOji-to-Supermemo.user.js
 // @downloadURL  https://github.com/Z233/userscript/raw/main/MOji-to-Supermemo.user.js
 // @description  https://getquicker.net/Sharedaction?code=f4d4f1b3-11b8-4d48-7e17-08da43e01676
@@ -40,7 +40,7 @@
 			acc = { ...acc, [detail]: [] }
 
 			const exampleEls = el.querySelectorAll('.example-info')
-			Array.from(exampleEls).forEach(exampleEl => acc[detail].push(exampleEl.firstChild.innerHTML))
+			Array.from(exampleEls).forEach(exampleEl => acc[detail].push(exampleEl.firstChild.innerHTML + ' | ' + exampleEl.lastChild.innerText))
 			return acc
 		}, {})
 
