@@ -1,8 +1,8 @@
 # Fronz's userscripts
 
-## MOji-to-Supermemo.user.js
+## MOJi-to-Supermemo.user.js
 
-Preinstalled [quicker action](https://getquicker.net/Sharedaction?code=f4d4f1b3-11b8-4d48-7e17-08da43e01676&fromMyShare=true) needed.
+Preinstall [quicker action](https://getquicker.net/Sharedaction?code=f4d4f1b3-11b8-4d48-7e17-08da43e01676&fromMyShare=true) needed.
 
 Add "import to SuperMemo 18" button for https://www.mojidict.com/. See image below:
 
