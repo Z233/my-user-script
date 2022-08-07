@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youdao-to-Supermemo
 // @namespace    http://tampermonkey.net/
-// @version      0.1.1
+// @version      0.1.2
 // @updateURL    https://github.com/Z233/userscript/raw/main/Youdao-to-Supermemo.user.js
 // @downloadURL  https://github.com/Z233/userscript/raw/main/Youdao-to-Supermemo.user.js
 // @description  https://getquicker.net/Sharedaction?code=f4d4f1b3-11b8-4d48-7e17-08da43e01676
@@ -31,7 +31,7 @@
 		const wordEl = document.querySelector('.word-head .title')
 		const word = wordEl.innerText
 
-		const symbolEl = document.querySelectorAll('.per-phone')[0]
+		const symbolEl = document.querySelector('.phone_con')
 		const symbol = symbolEl.textContent
 
 		const definitionEls = document.querySelectorAll('.trans-container .basic .word-exp')
