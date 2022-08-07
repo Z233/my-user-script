@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MOJi-to-Supermemo
 // @namespace    http://tampermonkey.net/
-// @version      0.1.5
+// @version      0.1.6
 // @updateURL    https://github.com/Z233/userscript/raw/main/MOji-to-Supermemo.user.js
 // @downloadURL  https://github.com/Z233/userscript/raw/main/MOji-to-Supermemo.user.js
 // @description  https://getquicker.net/Sharedaction?code=f4d4f1b3-11b8-4d48-7e17-08da43e01676
@@ -34,7 +34,7 @@
 		const pronEl = document.querySelector('div.head div.pron')
 		const pron = pronEl.innerText.replace('\n', '')
 
-		const detailListEls = document.querySelectorAll('.el-collapse[role=tablist]')
+		const detailListEls = document.querySelectorAll('.trans-box > div[id]')
 		const detailList = [...detailListEls].reduce((acc, el) => {
 			const detail = el.querySelector('div > p').textContent
 			acc = { ...acc, [detail]: [] }
